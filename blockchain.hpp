@@ -14,15 +14,15 @@ class Blockchain {
 public:
     void AddBlock(Block);
     void CreateBlock(string);
-    Blockchain();
+    Blockchain(int);
 private:
     vector<Block> chain;
     int nDifficult;
     string compD;
 };
 
-Blockchain::Blockchain() {
-    this->nDifficult = 4;
+Blockchain::Blockchain(int _num) {
+    this->nDifficult = _num;
     char cstr[this->nDifficult + 1];
     for (int i = 0; i < this->nDifficult ; i++) {
         cstr[i] = '0';
